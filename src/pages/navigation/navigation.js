@@ -1,33 +1,29 @@
 import React from 'react'
 import './navigation.css'
-import { Button } from 'antd';
-import { UnorderedListOutlined, CloseCircleOutlined } from '@ant-design/icons';
+import { withRouter } from 'react-router-dom';
+import { Nav, Navbar } from 'react-bootstrap'
 
-function Navigation() {
+function Navigation({ location }) {
+    const path = location.pathname
+    console.log(path)
+
     return (
-        <div className="_header">
-            <h1 className="_logo">Logo</h1>
-            <input type="checkbox" id="chk" />
-            <label htmlFor="chk" className="_show-menu-btn">
-                <UnorderedListOutlined />
-            </label>
-            <div className="_menu">
-            <ul >
-                <a href="/#">Trang chủ</a>
-                <a href="/#">Nhà đầu tư</a>
-                <a href="/#">Sơ đồ phân lô</a>
-                <a href="/#">Các hoạt động</a>
-                <a href="/#">Giới thiệu</a>
-                <label htmlFor="chk" className="_menu-hide-button">
-                    <CloseCircleOutlined />
-                </label>
-                <Button className="_login-btn" type="primary">Primary</Button>
-            </ul>
-            </div>
-          
-           
+        <div>
+            <Navbar collapseOnSelect expand="lg" variant="dark" sticky='top'>
+                <Navbar.Brand href="#home">Logo</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="justify-content-center" defaultActiveKey={path}>
+                        <Nav.Link href="/home" eventKey="/home">Trang chủ</Nav.Link>
+                        <Nav.Link href="/investor" eventKey="/investor">Các nhà đầu tư</Nav.Link>
+                        <Nav.Link href="/map" eventKey="/map">Sơ đồ phân lô</Nav.Link>
+                        <Nav.Link href="/activity" eventKey="/activity">Các hoạt động</Nav.Link>
+                        <Nav.Link href="/about" eventKey="/about">Giới thiệu</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         </div>
     )
 }
 
-export default Navigation
+export default withRouter(Navigation) 

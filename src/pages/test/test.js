@@ -1,16 +1,16 @@
 import React from 'react'
 import './test.scss'
-import { Form, Input, Button } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+// import { Form, Input, Button } from 'antd';
+// import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 function Test() {
-    const onFinish = values => {
-        console.log('Received values of form: ', values);
-    };
+    // const onFinish = values => {
+    //     console.log('Received values of form: ', values);
+    // };
     return (
         <div>
             <h1>Hello</h1>
-            <Form
+            {/* <Form
                 name="normal_login"
                 className="login-form"
                 initialValues={{ remember: true }}
@@ -33,9 +33,6 @@ function Test() {
                     />
                 </Form.Item>
                 <Form.Item>
-                    {/* <Form.Item name="remember" valuePropName="checked" noStyle>
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>  */}
 
                     
                 </Form.Item>
@@ -45,7 +42,7 @@ function Test() {
                         Log in
         </Button>
                 </Form.Item>
-            </Form>
+            </Form> */}
         </div>
     )
 }
