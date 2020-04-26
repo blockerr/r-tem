@@ -2,7 +2,9 @@
     text-align: center;
     margin: 0;
     padding: 0;
-    font-family: "montserrat", sans-serif;
+    /* font-family: "montserrat", sans-serif; */
+    scroll-behavior: smooth;
+
 }
 
 .App-logo {
@@ -38,4 +40,8 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+._session-title{
+    color: rgba(10,148,153,1);
 }

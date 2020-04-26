@@ -1,11 +1,14 @@
 import React from 'react'
+import './home.css'
+import HomeCarousel from '../../components/home/carousels/home_carousel';
 
 function Home() {
-  return (
+  return ( 
     <div>
-      <h1>Home component</h1>
+      <HomeCarousel />
+      <h1 className="_session-title">GIỚI THIỆU </h1>
     </div>
-  )
+  ) 
 }
 
 export default Home
