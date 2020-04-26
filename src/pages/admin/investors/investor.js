@@ -1,9 +1,8 @@
 import React from 'react'
-import './investors.css'
+import './investor.css'
 function Investors() {
   return (
     <div>
-      <h1>CÁC NHÀ ĐẦU TƯ</h1>
     </div>
   )
 }
