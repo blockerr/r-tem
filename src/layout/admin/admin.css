@@ -11,3 +11,11 @@
 .site-layout-background {
   background: #fff;
 }
+
+.nav-text{
+  text-decoration: none !important;
+}
+
+._menu-icon{
+  margin-right: 5px;
+}

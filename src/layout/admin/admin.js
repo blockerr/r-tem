@@ -1,16 +1,16 @@
 import React from 'react'
 import './admin.css'
-import {Link} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { VideoCameraOutlined, HomeOutlined, UserOutlined, SettingOutlined } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
 
-const { Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+const { Header, Content, Footer, Sider } = Layout;
 
-function Admin({children}) {
+function Admin({ children }) {
+  const path = children.props.location.pathname
+
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{minHeight:'100vh'}}>
       <Sider
         breakpoint="lg"
         collapsedWidth="0"
@@ -21,57 +21,26 @@ function Admin({children}) {
           console.log(collapsed, type);
         }}
       >
-        <div className="logo" > </div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-          <SubMenu
-            key="sub1"
-            title={
-              <span>
-                <UserOutlined />
-                <span>List</span>
-              </span>
-            }
-          >
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
-          <Menu.Item key="1">
-            <UserOutlined />
-            <span className="nav-text"><Link to="/users">Users</Link></span>
+        <div className="logo" />
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={path}>
+          <Menu.Item key="/admin/investor">
+            <NavLink to="/admin/investor" className="nav-text"><i class="fa fa-home _menu-icon" aria-hidden="true"></i> Nhà đầu tư</NavLink>
           </Menu.Item>
-          <Menu.Item key="2">
-            <VideoCameraOutlined />
-            <span className="nav-text"><Link to="/list">List</Link></span>
+          <Menu.Item key="/admin/employee">
+            <NavLink to="/admin/employee" className="nav-text"><i className="fa fa-users _menu-icon" /> Nhân viên</NavLink>
           </Menu.Item>
-          <SubMenu
-            key="sub2"
-            title={
-              <span>
-                <SettingOutlined />
-                <span>Setting</span>
-              </span>
-            }
-          >
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
+          <Menu.Item key="/admin/map">
+            <NavLink to="/admin/map" className="nav-text"><i class="fa fa-picture-o _menu-icon" aria-hidden="true"></i> Sơ đồ phân lô</NavLink>
+          </Menu.Item>
+          <Menu.Item key="/admin/camera">
+            <NavLink to="/admin/camera" className="nav-text"><i class="fa fa-video-camera _menu-icon" aria-hidden="true"></i> Camera</NavLink>
+          </Menu.Item>
         </Menu>
       </Sider>
       <Layout>
+        <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
         <Content style={{ margin: '24px 16px 0' }}>
-          <div className="site-layout-background" style={{ padding: 24 }}>
-            <Breadcrumb>
-              <Breadcrumb.Item href="">
-                <HomeOutlined />
-              </Breadcrumb.Item>
-              <Breadcrumb.Item href="">
-                <UserOutlined />
-                <span>Application List</span>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>Application</Breadcrumb.Item>
-            </Breadcrumb>
+          <div className="site-layout-background" style={{ padding: 24, minHeight: '100%' }}>
             {children}
           </div>
         </Content>
