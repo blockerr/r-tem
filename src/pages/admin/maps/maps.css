@@ -1,0 +1,24 @@
+._map-container .ant-row ._map-image-box img{
+  width: 500px;
+  height: 600px;
+}
+
+._lent {
+  color: red;
+}
+
+._nolent {
+  color: green;
+}
+
+._near-expire {
+  color: orange;
+}
+
+/* ._map-info {
+  float: left;
+}
+._map-container img{
+  width: 500px;
+  height: 600px;
+} */

@@ -1,12 +1,12 @@
-import  React  from 'react'
+import React from 'react'
 import './admin.css'
 import { NavLink, useHistory } from 'react-router-dom'
 import { UserOutlined } from '@ant-design/icons';
-import { Layout, Menu, Avatar } from 'antd';
+import { Layout, Menu, Avatar, Affix } from 'antd';
 import auth from '../../helpers/auth'
 
 const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 function Admin({ children }) {
   const history = useHistory();
@@ -18,7 +18,13 @@ function Admin({ children }) {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Sider className="_slider"
+      <Sider
+        style={{
+        overflow: 'auto',
+        height: '100vh',
+        position: 'fixed',
+        left: 0,
+      }}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={broken => {
@@ -51,18 +57,21 @@ function Admin({ children }) {
           </SubMenu>
         </Menu>
       </Sider>
-      <Layout>
-        <Header className="site-layout-sub-header-background" style={{ padding: 0, backgroundColor: '#001529' }}>
-          <div className="_avatar-box">
-            <Avatar className="_avatar" size='large' icon={<UserOutlined />} />
-          </div>
-        </Header>
-        <Content style={{ margin: '24px 16px 0' }}>
-          <div className="site-layout-background" style={{ padding: 24, minHeight: '100%' }}>
+      <Layout style={{ marginLeft: 200 }}>
+        <Affix >
+          <Header className="site-layout-sub-header-background" style={{ padding: 0, backgroundColor: '#001529' }}>
+            <div className="_avatar-box">
+              <Avatar className="_avatar" size='large' icon={<UserOutlined />} />
+            </div>
+          </Header>
+        </Affix>
+
+        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+          <div className="site-layout-background" style={{ padding: 24, minHeight: '100vh' }}>
             {children}
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Layout footer</Footer>
+        {/* <Footer style={{ textAlign: 'center' }}>Layout footer</Footer> */}
       </Layout>
     </Layout>
   )

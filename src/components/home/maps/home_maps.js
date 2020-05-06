@@ -1,5 +1,5 @@
 import React from 'react'
-import maps from '../../../assets/MAP.png'
+import maps from '../../../assets/map.jpg'
 function HomeMaps() {
   return (
     <div>
