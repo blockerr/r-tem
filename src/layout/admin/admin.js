@@ -57,7 +57,7 @@ function Admin({ children }) {
           </SubMenu>
         </Menu>
       </Sider>
-      <Layout style={{ marginLeft: 200 }}>
+      <Layout  className="site-layout" style={{ marginLeft: 200 }}>
         <Affix >
           <Header className="site-layout-sub-header-background" style={{ padding: 0, backgroundColor: '#001529' }}>
             <div className="_avatar-box">

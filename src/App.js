@@ -13,7 +13,7 @@ import HomeAdmin from './pages/admin/home/home';
 import auth from './helpers/auth'
 
 import {ProtectedRoute} from './helpers/protected.route';
-import { AdminRoute } from './helpers/admin.route';
+// import { AdminRoute } from './helpers/admin.route';
 import NotFound from './pages/notfound/notfound';
 
 
@@ -38,7 +38,8 @@ function App() {
         <Route exact path='/login' component={Login} layout={LoginLayout}/>
         <ProtectedRoute exact path='/admin/home' component={HomeAdmin} layout={Admin} />
         <ProtectedRoute exact path='/admin/investor' component={Investor} layout={Admin} />
-        <AdminRoute exact path='/admin/employee' component={Employee} layout={Admin} />
+        <ProtectedRoute exact path='/admin/employee' component={Employee} layout={Admin} />
+        {/* <AdminRoute exact path='/admin/employee' component={Employee} layout={Admin} /> */}
         <ProtectedRoute exact path='/admin/map' component={Maps} layout={Admin} />
         <ProtectedRoute exact path='/admin/camera' component={Camera} layout={Admin} />
         <Route exact path='*' component={NotFound}/>

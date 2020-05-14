@@ -15,10 +15,18 @@
   color: orange;
 }
 
-/* ._map-info {
+
+._map-container {
+  float: left;
+  width: 60%;
+  height: 100vh;
+  border-right: 1px solid;
+}
+._map-info{
+  width: 20%;
   float: left;
 }
-._map-container img{
-  width: 500px;
-  height: 600px;
-} */
+._map-handle{
+  width: 39%;
+  float: right;
+}

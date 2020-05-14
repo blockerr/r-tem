@@ -1,4 +1,4 @@
-import axios from './axios';
+import {axios_noAuth} from './axios';
 var jwtDecode = require('jwt-decode');
 
 class Auth {
@@ -16,7 +16,7 @@ class Auth {
   }
 
   login(credencials) {
-    axios.post('/admin/signin', credencials)
+    axios_noAuth.post('/admin/signin', credencials)
       .then(res => {
         localStorage.setItem('token', res.data.token);
         const decoded = this.decodeUserFromToken(res.data.token);
