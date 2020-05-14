@@ -4,20 +4,48 @@ import './App.css';
 import Navigation from './pages/navigation/navigation';
 import Admin from './layout/admin/admin';
 import Investor from './pages/admin/investors/investor'
+import Employee from './pages/admin/employees/employee';
+import Maps from './pages/admin/maps/maps';
+import Camera from './pages/admin/cameras/camera';
+import Login from './pages/login/login';
+import LoginLayout from './layout/login/login';
+import HomeAdmin from './pages/admin/home/home';
+import auth from './helpers/auth'
 
-const routers = [
-  { name: 'Admin', path: '/admin', component: Investor, layout: Admin },
-  { name: 'User', path: '/', component: Navigation, layout: Navigation }
-]
+import {ProtectedRoute} from './helpers/protected.route';
+// import { AdminRoute } from './helpers/admin.route';
+import NotFound from './pages/notfound/notfound';
+
+
+// const routers = [
+//   { name: 'Admin', path: '/admin/home', component: HomeAdmin, layout: Admin },
+//   { name: 'Investor', path: '/admin/investor', component: Investor, layout: Admin },
+//   { name: 'Employee', path: '/admin/employee', component: Employee, layout: Admin },
+//   { name: 'Maps', path: '/admin/map', component: Maps, layout: Admin },
+//   { name: 'Camera', path: '/admin/camera', component: Camera, layout: Admin },
+//   { name: 'User', path: '/', component: Navigation, layout: Navigation },
+//   { name: 'Login', path: '/login', component: Login, layout: LoginLayout },
+// ]
 
 function App() {
+  console.log(auth)
   return (
     <div className="App">
       <Router>
         {/* <Navigation /> */}
         <Switch>
-        {
-            routers.map(({name, path, component: Component, layout: Layout}) => (
+        <Route exact path='/' component={Navigation} layout={Navigation}/>
+        <Route exact path='/login' component={Login} layout={LoginLayout}/>
+        <ProtectedRoute exact path='/admin/home' component={HomeAdmin} layout={Admin} />
+        <ProtectedRoute exact path='/admin/investor' component={Investor} layout={Admin} />
+        <ProtectedRoute exact path='/admin/employee' component={Employee} layout={Admin} />
+        {/* <AdminRoute exact path='/admin/employee' component={Employee} layout={Admin} /> */}
+        <ProtectedRoute exact path='/admin/map' component={Maps} layout={Admin} />
+        <ProtectedRoute exact path='/admin/camera' component={Camera} layout={Admin} />
+        <Route exact path='*' component={NotFound}/>
+
+          {/* {
+            routers.map(({ name, path, component: Component, layout: Layout }) => (
               <Route
                 key={name}
                 exact
@@ -29,7 +57,7 @@ function App() {
                 )}
               />
             ))
-          }
+          } */}
         </Switch>
       </Router>
     </div>

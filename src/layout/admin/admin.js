@@ -1,17 +1,30 @@
 import React from 'react'
 import './admin.css'
-import {Link} from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
+import { UserOutlined } from '@ant-design/icons';
+import { Layout, Menu, Avatar, Affix } from 'antd';
+import auth from '../../helpers/auth'
 
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { VideoCameraOutlined, HomeOutlined, UserOutlined, SettingOutlined } from '@ant-design/icons';
-
-const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
+const { Header, Content, Sider } = Layout;
 
-function Admin({children}) {
+function Admin({ children }) {
+  const history = useHistory();
+  const path = children.props.location.pathname;
+  const logout = () => {
+    auth.logout();
+    history.push('/login');
+  }
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider
+        style={{
+        overflow: 'auto',
+        height: '100vh',
+        position: 'fixed',
+        left: 0,
+      }}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={broken => {
@@ -21,61 +34,44 @@ function Admin({children}) {
           console.log(collapsed, type);
         }}
       >
-        <div className="logo" > </div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-          <SubMenu
-            key="sub1"
-            title={
-              <span>
-                <UserOutlined />
-                <span>List</span>
-              </span>
-            }
-          >
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
-          <Menu.Item key="1">
-            <UserOutlined />
-            <span className="nav-text"><Link to="/users">Users</Link></span>
+        <div className="logo" />
+        <Menu className="_menu" theme="dark" mode="inline" defaultSelectedKeys={path}>
+          <Menu.Item key="/admin/home">
+            <NavLink to="/admin/home" className="nav-text"><i className="fa fa-home _menu-icon" aria-hidden="true"></i>Trang chủ</NavLink>
           </Menu.Item>
-          <Menu.Item key="2">
-            <VideoCameraOutlined />
-            <span className="nav-text"><Link to="/list">List</Link></span>
+          <Menu.Item key="/admin/investor">
+            <NavLink to="/admin/investor" className="nav-text"><i className="fa fa-home _menu-icon" aria-hidden="true"></i> Nhà đầu tư</NavLink>
           </Menu.Item>
-          <SubMenu
-            key="sub2"
-            title={
-              <span>
-                <SettingOutlined />
-                <span>Setting</span>
-              </span>
-            }
-          >
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
+          <Menu.Item key="/admin/employee">
+            <NavLink to="/admin/employee" className="nav-text"><i className="fa fa-users _menu-icon" /> Nhân viên</NavLink>
+          </Menu.Item>
+          <Menu.Item key="/admin/map">
+            <NavLink to="/admin/map" className="nav-text"><i className="fa fa-picture-o _menu-icon" aria-hidden="true"></i> Sơ đồ phân lô</NavLink>
+          </Menu.Item>
+          <Menu.Item key="/admin/camera">
+            <NavLink to="/admin/camera" className="nav-text"><i className="fa fa-video-camera _menu-icon" aria-hidden="true"></i> Camera</NavLink>
+          </Menu.Item>
+          <SubMenu key="setting" icon={<i className="fa fa-cogs _menu-icon" aria-hidden="true"></i>} title="Cài đặt">
+            {/* <Menu.Item key="4" onClick={() => auth.logout(() => {history.push('/login')})} > <i className="fa fa-sign-out _menu-icon" aria-hidden="true"></i> Đăng xuất</Menu.Item> */}
+            <Menu.Item key="4" onClick={logout} > <i className="fa fa-sign-out _menu-icon" aria-hidden="true"></i> Đăng xuất</Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
-      <Layout>
-        <Content style={{ margin: '24px 16px 0' }}>
-          <div className="site-layout-background" style={{ padding: 24 }}>
-            <Breadcrumb>
-              <Breadcrumb.Item href="">
-                <HomeOutlined />
-              </Breadcrumb.Item>
-              <Breadcrumb.Item href="">
-                <UserOutlined />
-                <span>Application List</span>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>Application</Breadcrumb.Item>
-            </Breadcrumb>
+      <Layout  className="site-layout" style={{ marginLeft: 200 }}>
+        <Affix >
+          <Header className="site-layout-sub-header-background" style={{ padding: 0, backgroundColor: '#001529' }}>
+            <div className="_avatar-box">
+              <Avatar className="_avatar" size='large' icon={<UserOutlined />} />
+            </div>
+          </Header>
+        </Affix>
+
+        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+          <div className="site-layout-background" style={{ padding: 24, minHeight: '100vh' }}>
             {children}
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        {/* <Footer style={{ textAlign: 'center' }}>Layout footer</Footer> */}
       </Layout>
     </Layout>
   )

@@ -11,3 +11,25 @@
 .site-layout-background {
   background: #fff;
 }
+
+.nav-text{
+  text-decoration: none !important;
+}
+
+._menu-icon{
+  margin-right: 5px;
+}
+
+._avatar-box{
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* flex-direction: column; */
+  float: right;
+  margin-right: 2%;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected{
+  background-color:  rgba(10,148,153,1) !important;
+}
