@@ -1,0 +1,17 @@
+._services{
+    background: rgb(238, 237, 237);
+    text-align: center;
+}
+._services-card{
+    margin: 0 auto;
+}
+._services-col{
+    margin-bottom: 20px;
+}
+._services-col .ant-card-body{
+    height: 400px;
+}
+._services-row{
+    margin: 0 auto;
+    width: 1400px;
+}

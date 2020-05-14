@@ -1,0 +1,12 @@
+._footer{
+    background-color: rgb(26, 26, 26);
+    text-align: center;
+}
+._footer p{
+    color: white;
+    margin: 0px;
+}
+._footer h3{
+    color: white;
+    margin-top: 10px;
+}

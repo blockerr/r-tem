@@ -1,0 +1,18 @@
+.ant-carousel .slick-slide img {
+  display: inherit;
+}
+._image-box img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 484px;
+  /* line-height: 160px; */
+  /* background: red; */
+  /* overflow: hidden; */
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}

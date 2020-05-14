@@ -1,90 +1,33 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "montserrat", sans-serif;
-}
-
-._header {
-    height: 100px;
-    background-color: #1abc9c;
-    padding: 0 20px;
-    color: #fff;
-}
-
-._logo {
-    line-height: 100px;
-    float: left;
-    text-transform: uppercase;
-}
-._menu {
-    line-height: 100px;
-}
-
-._menu a {
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 0 10px;
-}
-
-._show-menu-btn, ._menu-hide-button {
-    transition: 0.4s;
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
-}
-
-._menu a:hover, ._show-menu-btn:hover, ._menu-hide-button:hover{
-    color: #2980b9;
-}
-
-._show-menu-btn{
-    float: right;
-}
-
-._show-menu-btn .anticon-unordered-list{
-    line-height: 100px;
-}
-
-#chk {
-    position: absolute;
-    visibility: hidden;
-    z-index: -1111 !important;
-}
-
-._wrap-button-login {
-    height: 100%;
-    float: right;
+.navbar {
     display: flex;
-    align-items: center;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(10,148,153,1) 0%, rgba(54,180,186,1) 19%, rgba(142,205,218,1) 100%);
+    /* padding: 1%; */
 }
-@media screen and (max-width: 800px) {
-    ._show-menu-btn, ._menu-hide-button {
-        display: block;
-    }
-    ._menu {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        top: 0;
-        right: -100%;
-        text-align: center;
-        padding: 80px 0;
-        line-height: normal;
-        transition: 0.7s;
-        opacity: 0.5;
-    }
-    ._menu a {
-        display: block;
-        padding: 20px;
-    }
-    ._menu-hide-button {
-        position: absolute;
-        top: 30px;
-        right: 20px;
-    }
-    #chk:checked ~ ._menu{
-        right: 0;
-    }
+.navbar-nav{
+    width: 100%; 
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link.active{
+    border-bottom: 2px solid;
+}
+
+._header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+._nav-link {
+    padding: 15px;
+    color: white !important;
+}
+
+._nav-link:hover{
+   cursor: pointer;
+   color: antiquewhite !important;
 }

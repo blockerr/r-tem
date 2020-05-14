@@ -1,0 +1,26 @@
+.te {
+  font-family: 'Roboto Condensed', sans-serif !important;
+
+}
+
+._Home{
+  text-align: center;
+  background: rgb(238, 237, 237);
+}
+
+._Home-content{
+  text-align: center;
+  margin-bottom: 20px;
+}
+._session-title{
+  margin: 0px;
+}
+._Home-content p{
+  margin: 0 auto;
+  width: 700px;
+  font-size: 20px;
+  text-align: justify;
+}
+._col_carso .ant-carousel .slick-list{
+  height: 600px;
+}
