@@ -25,7 +25,7 @@ function Footer() {
         <Col span={8}>
          <h3 > Mạng Xã Hội </h3>
          <hr style={{border: '1px solid #f00'}} />​
-         <div class="fb-page" data-href="https://www.facebook.com/WHAMGM/" data-tabs="timeline" data-width="" data-height="225px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/WHAMGM/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/WHAMGM/">Warehousemanagement</a></blockquote></div>
+         <div className="fb-page" data-href="https://www.facebook.com/WHAMGM/" data-tabs="timeline" data-width="" data-height="225px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/WHAMGM/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/WHAMGM/">Warehousemanagement</a></blockquote></div>
         </Col>       
       </Row>
       <hr color="white"/>

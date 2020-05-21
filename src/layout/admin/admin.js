@@ -51,6 +51,9 @@ function Admin({ children }) {
           <Menu.Item key="/admin/camera">
             <NavLink to="/admin/camera" className="nav-text"><i className="fa fa-video-camera _menu-icon" aria-hidden="true"></i> Camera</NavLink>
           </Menu.Item>
+          <Menu.Item key="/admin/layout">
+            <NavLink to="/admin/layout" className="nav-text"><i className="fa fa-picture-o _menu-icon" aria-hidden="true"></i>Giao diện</NavLink>
+          </Menu.Item>    
           <SubMenu key="setting" icon={<i className="fa fa-cogs _menu-icon" aria-hidden="true"></i>} title="Cài đặt">
             {/* <Menu.Item key="4" onClick={() => auth.logout(() => {history.push('/login')})} > <i className="fa fa-sign-out _menu-icon" aria-hidden="true"></i> Đăng xuất</Menu.Item> */}
             <Menu.Item key="4" onClick={logout} > <i className="fa fa-sign-out _menu-icon" aria-hidden="true"></i> Đăng xuất</Menu.Item>
