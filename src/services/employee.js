@@ -20,6 +20,5 @@ export const getEmployee = (id) => {
 }
 
 export const updateAvatar = (id, formData) => {
-    console.log("2222222222222222222222222222222")
     return axiosFormData.put(`/admin/avatar/${id}`, formData)
 }
