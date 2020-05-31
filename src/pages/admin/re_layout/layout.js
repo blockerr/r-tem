@@ -1,6 +1,6 @@
 import React from 'react'
 import './layout.css'
-import { Table, Drawer, DatePicker, Form, Button, Col, Row, Input, Select, Tag, Space, Popconfirm, Upload, Avatar, Modal } from 'antd';
+import {  Button} from 'antd';
 function Layout() {
   return (
     <div className="_layout-container">

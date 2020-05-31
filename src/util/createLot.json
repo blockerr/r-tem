@@ -1,0 +1,46 @@
+[{
+	"lotNumber": 1,
+	"location": [
+		{"x": "108", "y":"41"},
+		{"x": "229", "y":"59.5"},
+		{"x": "229", "y":"92"},
+		{"x": "108", "y":"92"}
+		],
+	"acreage": "300",
+	"address": "23/20 Duong Thi Muoi, phường Tân Chánh Hiệp, Q.12, TP Hồ Chí Minh"
+},
+{
+	"lotNumber": 2,
+	"location": [
+		{"x": "190", "y":"146.3333339691162"},
+		{"x": "229", "y":"146.3333339691162"},
+		{"x": "229", "y":"142"},
+		{"x": "190", "y":"142"}
+		],
+	"acreage": "300",
+	"address": "23/20 Duong Thi Muoi, phường Tân Chánh Hiệp, Q.12, TP Hồ Chí Minh"
+},
+{
+	"lotNumber": 3,
+	"location": [
+		{"x": "190", "y":"146.3333339691162"},
+		{"x": "229", "y":"146.3333339691162"},
+		{"x": "229", "y":"142"},
+		{"x": "190", "y":"142"}
+		],
+	"acreage": "300",
+	"address": "23/20 Duong Thi Muoi, phường Tân Chánh Hiệp, Q.12, TP Hồ Chí Minh"
+},
+{
+	"lotNumber": 4,
+	"location": [
+		{"x": "233", "y":"59.3"},
+		{"x": "235", "y":"59.3"},
+		{"x": "267", "y":"85"},
+		{"x": "267", "y":"297"},
+		{"x": "232", "y":"297"}
+		],
+	"acreage": "300",
+	"address": "23/20 Duong Thi Muoi, phường Tân Chánh Hiệp, Q.12, TP Hồ Chí Minh"
+}
+]

@@ -13,19 +13,9 @@ import HomeAdmin from './pages/admin/home/home';
 import auth from './helpers/auth'
 
 import {ProtectedRoute} from './helpers/protected.route';
-// import { AdminRoute } from './helpers/admin.route';
+import { AdminRoute } from './helpers/admin.route';
 import NotFound from './pages/notfound/notfound';
-
-
-// const routers = [
-//   { name: 'Admin', path: '/admin/home', component: HomeAdmin, layout: Admin },
-//   { name: 'Investor', path: '/admin/investor', component: Investor, layout: Admin },
-//   { name: 'Employee', path: '/admin/employee', component: Employee, layout: Admin },
-//   { name: 'Maps', path: '/admin/map', component: Maps, layout: Admin },
-//   { name: 'Camera', path: '/admin/camera', component: Camera, layout: Admin },
-//   { name: 'User', path: '/', component: Navigation, layout: Navigation },
-//   { name: 'Login', path: '/login', component: Login, layout: LoginLayout },
-// ]
+import Layout from './pages/admin/layout/layout';
 
 function App() {
   console.log(auth)
@@ -38,9 +28,10 @@ function App() {
         <Route exact path='/login' component={Login} layout={LoginLayout}/>
         <ProtectedRoute exact path='/admin/home' component={HomeAdmin} layout={Admin} />
         <ProtectedRoute exact path='/admin/investor' component={Investor} layout={Admin} />
-        <ProtectedRoute exact path='/admin/employee' component={Employee} layout={Admin} />
-        {/* <AdminRoute exact path='/admin/employee' component={Employee} layout={Admin} /> */}
+        {/* <ProtectedRoute exact path='/admin/employee' component={Employee} layout={Admin} /> */}
+        <AdminRoute exact path='/admin/employee' component={Employee} layout={Admin} />
         <ProtectedRoute exact path='/admin/map' component={Maps} layout={Admin} />
+        <ProtectedRoute exact path='/admin/layout' component={Layout} layout={Admin} />
         <ProtectedRoute exact path='/admin/camera' component={Camera} layout={Admin} />
         <Route exact path='*' component={NotFound}/>
 
